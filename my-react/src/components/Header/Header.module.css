@@ -1,0 +1,18 @@
+.header {
+	background-color: #00b7ff;
+	border-radius: 20px;
+	box-shadow: 0 0 5px #487c91;
+
+	grid-area: header;
+
+	margin-bottom: 10px;
+}
+
+.header__logo {
+	padding: 10px;
+}
+
+.header__logo img {
+	width: 80px;
+	height: 80px;
+}

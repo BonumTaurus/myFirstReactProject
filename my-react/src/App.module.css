@@ -1,0 +1,17 @@
+.app__container {
+	width: 1200px;
+	margin: 0px auto;
+
+	height: 100%;
+}
+
+.app__grid {
+	background-color: #e6ecf5;
+	box-shadow: 0 0 7px #e6ecf5;
+
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 1fr 5fr;
+	grid-template-areas: 'header header'
+	                     'sidebar content' ;					
+}

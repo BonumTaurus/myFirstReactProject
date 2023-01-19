@@ -1,0 +1,23 @@
+.sidebar {
+	background-color: #f74881;
+	border-radius: 20px;
+	box-shadow: 0 0 7px #ad2955;
+
+	grid-area: sidebar;
+}
+
+.sidebar__list {
+	padding: 20px;
+}
+
+.sidebar__item {
+	margin-bottom: 10px;
+}
+
+.sidebar__item a {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	letter-spacing: 1.5px;
+}
