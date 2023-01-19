@@ -1,0 +1,37 @@
+.dialogs {
+	background-color: #fab819;
+	height: 100%;
+	border-radius: 20px;
+	box-shadow: 0 0 5px #7d5e16;
+
+	display: flex;
+}
+
+.dialogs__friends {
+	margin: 20px 100px 0px 20px;
+}
+
+.dialogs__friend {
+	margin-bottom: 20px;
+}
+
+.dialogs__ava {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.dialogs__friend span {
+	color: #fff;
+	font-size: 18px;
+}
+
+.dialogs__messages {
+	margin-top: 20px;
+}
+
+.dialogs__message {
+	margin-bottom: 15px;
+	color: #333;
+	font-weight: 600;
+}
