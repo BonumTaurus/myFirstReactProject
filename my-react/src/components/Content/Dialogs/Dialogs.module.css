@@ -11,27 +11,6 @@
 	margin: 20px 100px 0px 20px;
 }
 
-.dialogs__friend {
-	margin-bottom: 20px;
-}
-
-.dialogs__ava {
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-}
-
-.dialogs__friend span {
-	color: #fff;
-	font-size: 18px;
-}
-
 .dialogs__messages {
 	margin-top: 20px;
-}
-
-.dialogs__message {
-	margin-bottom: 15px;
-	color: #333;
-	font-weight: 600;
 }
