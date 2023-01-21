@@ -2,7 +2,7 @@
 	width: 1200px;
 	margin: 0px auto;
 
-	height: 100%;
+	min-height: 100%;
 }
 
 .app__grid {
@@ -11,6 +11,7 @@
 
 	display: grid;
 	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 120px minmax(550px, auto);
 	grid-template-areas: 'header header'
 	                     'sidebar content' ;					
 }

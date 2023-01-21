@@ -4,7 +4,7 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import { Content } from './components/Content/Content';
 import { BrowserRouter } from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
 	return (
 		<BrowserRouter>
 			<div className={style.app}>
@@ -12,7 +12,7 @@ const App = () => {
 					<div className={style.app__grid}>
 						<Header />
 						<Sidebar />
-						<Content />
+						<Content dialogsFriends={props.dialogsFriends} dialogsMessages={props.dialogsMessages} posts={props.posts} />
 					</div>
 				</div>
 			</div>
