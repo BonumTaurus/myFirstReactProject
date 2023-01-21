@@ -1,0 +1,36 @@
+.profile__header {
+	position: relative;
+
+	margin-bottom: 150px;
+}
+
+.profile__fon {
+	padding: 20px;
+}
+
+.profile__fon img {
+	border-radius: 20px;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+
+.profile__ava {
+	position: absolute;
+	top:230px;
+	left: 100px;
+}
+
+.profile__ava img {
+	border-radius: 20px;
+	box-shadow: 0 0 5px #333;
+	width: 170px;
+}
+
+.profile__name {
+	color: #fff;
+	font-size: 20px;
+
+	position: absolute;
+	left: 300px;
+}

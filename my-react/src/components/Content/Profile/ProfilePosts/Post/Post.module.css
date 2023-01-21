@@ -1,0 +1,44 @@
+.profile__myPosts {
+	margin-left: 100px;
+	margin-right: 100px;
+
+	margin-bottom: 30px;
+	background-color: aqua;
+	border-radius: 20px;
+}
+
+.profile__post {
+	display: flex;
+	flex-direction: column;
+}
+
+.postInfo {
+	display: flex;
+}
+
+.postInfo img {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin: 10px;
+	box-shadow: 0 0 3px gray;
+}
+
+.postInfo__name {
+	color: #333;
+	font-weight: 500;
+	margin-top: 20px;
+}
+
+.postInfo__likes {
+	margin-left: 600px;
+	margin-top: 20px;
+	color: #f74881;
+	font-size: 18px;
+}
+
+.postText {
+	margin: 10px;
+	color: #333;
+	font-size: 18px;
+}
