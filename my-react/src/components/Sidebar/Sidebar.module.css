@@ -9,6 +9,8 @@
 
 .sidebar__list {
 	padding: 20px;
+
+	margin-bottom: 100px;
 }
 
 .sidebar__item {
@@ -25,4 +27,15 @@ a {
 	font-size: 18px;
 	cursor: pointer;
 	letter-spacing: 1.5px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.sidebar__friends {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0px 10px 0px 10px;
 }

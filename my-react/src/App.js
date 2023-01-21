@@ -11,7 +11,7 @@ const App = (props) => {
 				<div className={style.app__container}>
 					<div className={style.app__grid}>
 						<Header />
-						<Sidebar />
+						<Sidebar myFriends={props.myFriends} />
 						<Content dialogsFriends={props.dialogsFriends} dialogsMessages={props.dialogsMessages} posts={props.posts} />
 					</div>
 				</div>

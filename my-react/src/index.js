@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<App dialogsFriends={state.dialogsPage.dialogsFriends} dialogsMessages={state.dialogsPage.dialogsMessages}
-			posts={state.profilePage.posts} />
+			posts={state.profilePage.posts} myFriends={state.sidebarPage.myFriends} />
 	</React.StrictMode>
 );
 

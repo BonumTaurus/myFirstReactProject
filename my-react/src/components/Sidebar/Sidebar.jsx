@@ -1,7 +1,10 @@
 import s from './Sidebar.module.css'
 import { NavLink } from 'react-router-dom';
+import { Friend } from './Friend/Friend';
 
 const Sidebar = (props) => {
+
+	let myFriends = props.myFriends.map(f => <Friend key={f.id} ava={f.ava} name={f.name} />)
 
 	const setColorActive = ({ isActive }) => ({ color: isActive ? '#333' : '#fff' })
 
@@ -24,7 +27,11 @@ const Sidebar = (props) => {
 					<NavLink to={'/users'} style={setColorActive}>Users</NavLink>
 				</div>
 			</div>
-		</div >
+			<h2>My friends</h2>
+			<div className={s.sidebar__friends}>
+				{myFriends}
+			</div>
+		</div>
 	)
 }
 

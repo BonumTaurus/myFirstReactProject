@@ -1,7 +1,7 @@
 import style from './Content.module.css';
 import { Profile } from './Profile/Profile';
 import { Dialogs } from './Dialogs/Dialogs';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 const Content = (props) => {
 
