@@ -1,6 +1,6 @@
 import style from './App.module.css';
 import { Header } from './components/Header/Header';
-import { Sidebar } from './components/Sidebar/Sidebar';
+import { SidebarContainer } from './components/Sidebar/SidebarContainer';
 import { Content } from './components/Content/Content';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const App = (props) => {
 				<div className={style.app__container}>
 					<div className={style.app__grid}>
 						<Header />
-						<Sidebar myFriends={props.myFriends} />
+						<SidebarContainer />
 						<Content dialogsFriends={props.dialogsFriends} dialogsMessages={props.dialogsMessages} posts={props.posts} />
 					</div>
 				</div>

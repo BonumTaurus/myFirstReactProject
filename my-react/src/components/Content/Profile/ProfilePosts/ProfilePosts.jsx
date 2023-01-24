@@ -8,7 +8,7 @@ const ProfilePosts = (props) => {
 	return (
 		<>
 			<div className={style.profile__setPost}>
-				<textarea></textarea>
+				<textarea onChange={props.onChangeText}></textarea>
 				<button>Add post</button>
 			</div>
 			{myPosts}

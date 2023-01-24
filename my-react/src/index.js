@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { store } from '../src/redux/store'
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<App dialogsFriends={store.getState().dialogsPage.dialogsFriends} dialogsMessages={store.getState().dialogsPage.dialogsMessages}
-			posts={store.getState().profilePage.posts} myFriends={store.getState().sidebar.myFriends} />
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</React.StrictMode>
 );
 
