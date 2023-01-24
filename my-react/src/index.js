@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { state } from './store/state';
+import { store } from '../src/redux/store'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<App dialogsFriends={state.dialogsPage.dialogsFriends} dialogsMessages={state.dialogsPage.dialogsMessages}
-			posts={state.profilePage.posts} myFriends={state.sidebarPage.myFriends} />
+		<App dialogsFriends={store.getState().dialogsPage.dialogsFriends} dialogsMessages={store.getState().dialogsPage.dialogsMessages}
+			posts={store.getState().profilePage.posts} myFriends={store.getState().sidebar.myFriends} />
 	</React.StrictMode>
 );
 
