@@ -12,7 +12,7 @@ const App = (props) => {
 					<div className={style.app__grid}>
 						<Header />
 						<SidebarContainer />
-						<Content dialogsFriends={props.dialogsFriends} dialogsMessages={props.dialogsMessages} posts={props.posts} />
+						<Content />
 					</div>
 				</div>
 			</div>

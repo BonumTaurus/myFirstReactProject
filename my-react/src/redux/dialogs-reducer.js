@@ -1,4 +1,5 @@
-
+const CHANGE_TEXT_MESSAGE = 'CHANGE-TEXT-MESSAGE'
+const ADD_MESSAGE = 'ADD-MESSAGE'
 
 const initialState = {
 	dialogsFriends: [
@@ -11,13 +12,30 @@ const initialState = {
 	dialogsMessages: [
 		{ id: 1, message: 'Hi' },
 		{ id: 2, message: 'How are you?' },
-		{ id: 3, message: 'I created my first react' }
-	]
+		{ id: 3, message: 'I created my first react' },
+	],
+	newTextMessage: null,
 }
 
 const dialogsReducer = (state = initialState, action) => {
-
-	return state
+	switch (action.type) {
+		case CHANGE_TEXT_MESSAGE: {
+			return {
+				...state, newTextMessage: action.textMessage
+			}
+		}
+		case ADD_MESSAGE: {
+			let newText = state.newTextMessage
+			state.newTextMessage = ''
+			return {
+				...state, dialogsMessages: [...state.dialogsMessages, { id: 4, message: newText }]
+			}
+		}
+		default: return state
+	}
 }
+
+export const newTextMessageActionCreater = (textMessage) => ({ type: CHANGE_TEXT_MESSAGE, textMessage })
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
 
 export { dialogsReducer };
