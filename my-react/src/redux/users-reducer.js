@@ -1,9 +1,17 @@
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
+const SET_PAGE = 'SET-PAGE'
+const GET_TOTAL_USERS = 'GET-TOTAL-USERS'
+const LOADING = 'LOADING'
 
 const initialState = {
-	users: []
+	users: [],
+	totalUsers: 200,
+	countUsersOnPage: 10,
+	page: 1,
+	portionSize: 10,
+	isLoading: true
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -31,6 +39,15 @@ const usersReducer = (state = initialState, action) => {
 		case SET_USERS: {
 			return { ...state, users: action.users }
 		}
+		case SET_PAGE: {
+			return { ...state, page: action.page }
+		}
+		case GET_TOTAL_USERS: {
+			return { ...state, totalUsers: action.countUsers }
+		}
+		case LOADING: {
+			return { ...state, isLoading: action.loading }
+		}
 		default:
 			return state
 	}
@@ -39,5 +56,9 @@ const usersReducer = (state = initialState, action) => {
 export const followActionCreator = (userId) => ({ type: FOLLOW, userId })
 export const unfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsersActionCreator = (users) => ({ type: SET_USERS, users })
+export const setPageActionCreator = (page) => ({ type: SET_PAGE, page })
+export const getTotalUsersActionCreator = (countUsers) => ({ type: GET_TOTAL_USERS, countUsers })
+export const isLoadingActionCreator = (loading) => ({ type: LOADING, loading })
+
 
 export { usersReducer };
