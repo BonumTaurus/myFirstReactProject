@@ -1,8 +1,7 @@
 import Users from './Users'
 import { connect } from 'react-redux'
 import {
-	followActionCreator, unfollowActionCreator, setUsersActionCreator,
-	setPageActionCreator, getTotalUsersActionCreator, isLoadingActionCreator
+	follow, unfollow, setUsers, setPage, getTotalUsers, toggleLoading
 } from '../../../redux/users-reducer'
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -48,28 +47,6 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		follow: (userId) => {
-			dispatch(followActionCreator(userId))
-		},
-		unfollow: (userId) => {
-			dispatch(unfollowActionCreator(userId))
-		},
-		setUsers: (users) => {
-			dispatch(setUsersActionCreator(users))
-		},
-		setPage: (page) => {
-			dispatch(setPageActionCreator(page))
-		},
-		getTotalUsers: (countUsers) => {
-			dispatch(getTotalUsersActionCreator(countUsers))
-		},
-		toggleLoading: (loading) => {
-			dispatch(isLoadingActionCreator(loading))
-		}
-	}
-}
-
-export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersWrapper)
+export const UsersContainer = connect(mapStateToProps,
+	{ follow, unfollow, setUsers, setPage, getTotalUsers, toggleLoading })(UsersWrapper)
 

@@ -53,12 +53,12 @@ const usersReducer = (state = initialState, action) => {
 	}
 }
 
-export const followActionCreator = (userId) => ({ type: FOLLOW, userId })
-export const unfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId })
-export const setUsersActionCreator = (users) => ({ type: SET_USERS, users })
-export const setPageActionCreator = (page) => ({ type: SET_PAGE, page })
-export const getTotalUsersActionCreator = (countUsers) => ({ type: GET_TOTAL_USERS, countUsers })
-export const isLoadingActionCreator = (loading) => ({ type: LOADING, loading })
+export const follow = (userId) => ({ type: FOLLOW, userId })
+export const unfollow = (userId) => ({ type: UNFOLLOW, userId })
+export const setUsers = (users) => ({ type: SET_USERS, users })
+export const setPage = (page) => ({ type: SET_PAGE, page })
+export const getTotalUsers = (countUsers) => ({ type: GET_TOTAL_USERS, countUsers })
+export const toggleLoading = (loading) => ({ type: LOADING, loading })
 
 
 export { usersReducer };
