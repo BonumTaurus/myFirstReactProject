@@ -1,11 +1,11 @@
 import style from './Profile.module.css'
-import { ProfileInfo } from './ProfileInfo/ProfileInfo';
 import { ProfilePostsContainer } from './ProfilePosts/ProfilePostsContainer';
+import { ProfileInfoContainer } from './ProfileInfo/ProfileInfoContainer';
 
 const Profile = (props) => {
 	return (
 		<div className={style.profile}>
-			<ProfileInfo />
+			<ProfileInfoContainer />
 			<ProfilePostsContainer />
 		</div>
 	)
