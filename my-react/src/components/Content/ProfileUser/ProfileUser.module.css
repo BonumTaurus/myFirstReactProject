@@ -1,0 +1,36 @@
+.userProfile {
+	position: relative;
+	margin-bottom: 150px;
+}
+
+.userProfile__fon {
+	padding: 20px;
+}
+
+.userProfile__fon img {
+	border-radius: 20px;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+
+.userProfile__ava {
+	position: absolute;
+	top:230px;
+	left: 100px;
+}
+
+.userProfile__ava img {
+	border-radius: 20px;
+	box-shadow: 0 0 5px #333;
+	width: 170px;
+}
+
+.userProfile__name {
+	color: #333;
+	font-weight: 600;
+	font-size: 20px;
+
+	position: absolute;
+	left: 300px;
+}

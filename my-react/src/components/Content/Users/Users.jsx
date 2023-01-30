@@ -1,6 +1,7 @@
 import style from './Users.module.css'
 import userAva from '../../../images/ava.jpg'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 const Users = (props) => {
@@ -35,7 +36,8 @@ const Users = (props) => {
 				props.users.map(u =>
 					<div key={u.id} className={style.userItem}>
 						<div className={style.userInfo}>
-							<img src={u.photos.large === null ? userAva : u.photos.large} className={style.userAva}></img>
+							<NavLink to={`/profile/${u.id}`}><img src={u.photos.large === null ? userAva : u.photos.large}
+								className={style.userAva}></img></NavLink>
 							<span className={style.userName}>{u.name}</span>
 						</div>
 						<div className={style.userStatus}>
