@@ -9,6 +9,7 @@ const initialState = {
 		{ id: 3, name: 'name', text: 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.', likesCount: 4, ava: avatar }
 	],
 	newPostText: '',
+	myProfile: null
 }
 
 const profileReducer = (state = initialState, action) => {

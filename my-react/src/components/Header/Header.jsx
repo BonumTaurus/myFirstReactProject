@@ -7,6 +7,9 @@ const Header = (props) => {
 			<div className={style.header__logo}>
 				<img src={logo_header}></img>
 			</div>
+			<div className={style.header__login}>
+				{props.isAuth ? <span>{props.login}</span> : <span>Login page</span>}
+			</div>
 		</header>
 	)
 }

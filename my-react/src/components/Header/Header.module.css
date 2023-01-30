@@ -5,6 +5,9 @@
 
 	grid-area: header;
 
+	display: flex;
+	justify-content: space-between;
+
 	margin-bottom: 10px;
 }
 
@@ -15,4 +18,18 @@
 .header__logo img {
 	width: 80px;
 	height: 80px;
+}
+
+.header__login {
+	align-self: center;
+	background-color: #fff;
+	border-radius: 20px;
+	margin-right: 20px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.header__login span {
+	color: #f74881;
+	font-weight: 600;
 }
