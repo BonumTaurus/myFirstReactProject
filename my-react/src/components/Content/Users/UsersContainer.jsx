@@ -11,7 +11,9 @@ const UsersWrapper = (props) => {
 
 	useEffect(() => {
 		props.toggleLoading(true)
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${props.page}&count=${props.countUsersOnPage}`).then(response => {
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${props.page}&count=${props.countUsersOnPage}`, {
+			withCredentials: true
+		}).then(response => {
 			props.toggleLoading(false)
 			props.setUsers(response.data.items)
 			props.getTotalUsers(response.data.totalCount)
@@ -21,16 +23,39 @@ const UsersWrapper = (props) => {
 	let onClickPage = (p) => {
 		props.toggleLoading(true)
 		props.setPage(p)
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${props.countUsersOnPage}`).then(response => {
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${props.countUsersOnPage}`, {
+			withCredentials: true
+		}).then(response => {
 			props.toggleLoading(false)
 			props.setUsers(response.data.items)
+		})
+	}
+
+	let onFollowClick = (userId) => {
+		axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {}, {
+			withCredentials: true
+		}).then(response => {
+			if (response.data.resultCode === 0) {
+				props.follow(userId)
+			}
+		})
+	}
+
+	let onUnfollowClick = (userId) => {
+		axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {
+			withCredentials: true
+		}).then(response => {
+			if (response.data.resultCode === 0) {
+				props.unfollow(userId)
+			}
 		})
 	}
 
 	return (
 		<>
 			{props.isLoading && <Preloader />}
-			<Users {...props} onClickPage={onClickPage} />
+			<Users {...props} onClickPage={onClickPage}
+				onFollowClick={onFollowClick} onUnfollowClick={onUnfollowClick} />
 		</>
 	)
 }
