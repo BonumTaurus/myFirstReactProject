@@ -4,6 +4,7 @@ const SET_USERS = 'SET-USERS'
 const SET_PAGE = 'SET-PAGE'
 const GET_TOTAL_USERS = 'GET-TOTAL-USERS'
 const LOADING = 'LOADING'
+const FOLLOWING_IN_PROGRESS = 'FOLLOWING-IN-PROGRESS'
 
 const initialState = {
 	users: [],
@@ -11,7 +12,9 @@ const initialState = {
 	countUsersOnPage: 10,
 	page: 1,
 	portionSize: 10,
-	isLoading: true
+	isLoading: true,
+	followingInProgress: false,
+	inProgressUserId: []
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -48,6 +51,12 @@ const usersReducer = (state = initialState, action) => {
 		case LOADING: {
 			return { ...state, isLoading: action.loading }
 		}
+		case FOLLOWING_IN_PROGRESS: {
+			return {
+				...state, inProgressUserId: action.progress ? [...state.inProgressUserId, action.userId] :
+					state.inProgressUserId.filter(userId => userId != action.userId)
+			}
+		}
 		default:
 			return state
 	}
@@ -59,6 +68,7 @@ export const setUsers = (users) => ({ type: SET_USERS, users })
 export const setPage = (page) => ({ type: SET_PAGE, page })
 export const getTotalUsers = (countUsers) => ({ type: GET_TOTAL_USERS, countUsers })
 export const toggleLoading = (loading) => ({ type: LOADING, loading })
+export const inProgressFollowing = (progress, userId) => ({ type: FOLLOWING_IN_PROGRESS, progress, userId })
 
 
 export { usersReducer };
