@@ -1,3 +1,5 @@
+import { usersAPI, followAPI } from "../API"
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
@@ -13,7 +15,6 @@ const initialState = {
 	page: 1,
 	portionSize: 10,
 	isLoading: true,
-	followingInProgress: false,
 	inProgressUserId: []
 }
 
@@ -70,5 +71,42 @@ export const getTotalUsers = (countUsers) => ({ type: GET_TOTAL_USERS, countUser
 export const toggleLoading = (loading) => ({ type: LOADING, loading })
 export const inProgressFollowing = (progress, userId) => ({ type: FOLLOWING_IN_PROGRESS, progress, userId })
 
+export const requestUsers = (page, countUsersOnPage) => (dispatch) => {
+	dispatch(toggleLoading(true))
+	usersAPI.getUsers(page, countUsersOnPage).then(response => {
+		dispatch(toggleLoading(false))
+		dispatch(setUsers(response.data.items))
+		dispatch(getTotalUsers(response.data.totalCount))
+	})
+}
+
+export const requestUsersOnPage = (page, countUsersOnPage) => (dispatch) => {
+	dispatch(toggleLoading(true))
+	dispatch(setPage(page))
+	usersAPI.getUsers(page, countUsersOnPage).then(response => {
+		dispatch(toggleLoading(false))
+		dispatch(setUsers(response.data.items))
+	})
+}
+
+export const requestOnFollow = (userId) => (dispatch) => {
+	dispatch(inProgressFollowing(true, userId))
+	followAPI.followUser(userId).then(response => {
+		if (response.data.resultCode === 0) {
+			dispatch(follow(userId))
+		}
+		dispatch(inProgressFollowing(false, userId))
+	})
+}
+
+export const requestOnUnfollow = (userId) => (dispatch) => {
+	dispatch(inProgressFollowing(true, userId))
+	followAPI.unfollowUser(userId).then(response => {
+		if (response.data.resultCode === 0) {
+			dispatch(unfollow(userId))
+		}
+		dispatch(inProgressFollowing(false, userId))
+	})
+}
 
 export { usersReducer };

@@ -1,4 +1,5 @@
-import { legacy_createStore, combineReducers } from 'redux'
+import { legacy_createStore, combineReducers, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
 import { dialogsReducer } from './dialogs-reducer'
 import { profileReducer } from './profile-reducer'
 import { sidebarReducer } from './sidebar-reducer'
@@ -15,6 +16,6 @@ const reducers = combineReducers({
 	auth: authReducer
 })
 
-const store = legacy_createStore(reducers)
+const store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))
 
 export { store }
