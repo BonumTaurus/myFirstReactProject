@@ -7,7 +7,7 @@ const ProfilePosts = (props) => {
 
 	let onChangeText = (e) => {
 		let newText = e.target.value
-		props.changedText(newText)
+		props.changePostText(newText)
 	}
 
 	let onClickButton = () => {
