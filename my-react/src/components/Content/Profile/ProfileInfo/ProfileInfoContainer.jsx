@@ -15,7 +15,7 @@ const ProfileInfoWrapper = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		myProfile: state.profilePage.myProfile
+		myProfile: state.auth.myProfile
 	}
 }
 

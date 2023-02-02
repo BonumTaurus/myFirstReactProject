@@ -1,6 +1,7 @@
 import style from './Header.module.css'
 import logo_header from '../../images/rocket.webp'
 import myAva from '../../images/myAva.jpg'
+import { NavLink } from 'react-router-dom'
 
 const Header = (props) => {
 	return (
@@ -11,7 +12,7 @@ const Header = (props) => {
 			<div className={style.header__login}>
 				{props.myProfile.photos.large === null ? <img src={myAva}></img> :
 					props.myProfile.photos.large}
-				{props.isAuth ? <span>{props.login}</span> : <span>Login page</span>}
+				{props.isAuth ? <span>{props.login}</span> : <NavLink to={'/login'}><span>Login page</span></NavLink>}
 			</div>
 		</header>
 	)
