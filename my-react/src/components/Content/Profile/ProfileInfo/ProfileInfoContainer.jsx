@@ -4,10 +4,6 @@ import { Preloader } from '../../../../Preloader/Preloader'
 
 const ProfileInfoWrapper = (props) => {
 
-	if (!props.myProfile) {
-		return <Preloader />
-	}
-
 	return (
 		<ProfileInfo {...props} />
 	)

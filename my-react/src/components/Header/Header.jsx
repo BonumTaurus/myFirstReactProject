@@ -10,8 +10,6 @@ const Header = (props) => {
 				<img src={logo_header}></img>
 			</div>
 			<div className={style.header__login}>
-				{props.myProfile.photos.large === null ? <img src={myAva}></img> :
-					props.myProfile.photos.large}
 				{props.isAuth ? <span>{props.login}</span> : <NavLink to={'/login'}><span>Login page</span></NavLink>}
 			</div>
 		</header>

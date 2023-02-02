@@ -10,10 +10,6 @@ const HeaderWrapper = (props) => {
 		props.requestAuthMe()
 	}, [props.login])
 
-	if (!props.myProfile) {
-		return <Preloader />
-	}
-
 	return (
 		<Header {...props} />
 	)

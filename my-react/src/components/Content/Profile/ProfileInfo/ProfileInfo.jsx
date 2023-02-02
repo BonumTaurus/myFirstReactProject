@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
 			<div className={style.profile__ava}>
 				<img src={myAva}></img>
 			</div>
-			<div className={style.profile__name}>{props.myProfile.fullName}</div>
+			<div className={style.profile__name}>{props.myProfile.fullName ? props.myProfile.fullName : 'name'}</div>
 		</div>
 	)
 }
