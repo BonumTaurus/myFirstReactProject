@@ -1,6 +1,5 @@
 import { ProfileInfo } from "./ProfileInfo";
 import { connect } from "react-redux";
-import { Preloader } from '../../../../Preloader/Preloader'
 
 const ProfileInfoWrapper = (props) => {
 

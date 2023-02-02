@@ -1,6 +1,9 @@
 import { Dialogs } from "./Dialogs";
 import { connect } from "react-redux";
 import { newTextMessageActionCreater, addMessageActionCreator } from "../../../redux/dialogs-reducer";
+import { withAuthorization } from "../../HOC/withAuthorization";
+
+const DialogsWrapper = withAuthorization(Dialogs)
 
 const mapStateToProps = (state) => {
 	return {
@@ -21,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(DialogsWrapper)
