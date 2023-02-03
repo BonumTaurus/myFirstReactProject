@@ -1,5 +1,6 @@
 import style from './ProfileInfo.module.css'
 import myAva from '../../../../images/myAva.jpg'
+import { ProfileStatus } from './ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
 	return (
@@ -11,6 +12,7 @@ const ProfileInfo = (props) => {
 				<img src={myAva}></img>
 			</div>
 			<div className={style.profile__name}>{props.myProfile.fullName ? props.myProfile.fullName : 'name'}</div>
+			<ProfileStatus status={props.status} requestUpdateStatus={props.requestUpdateStatus} />
 		</div>
 	)
 }
