@@ -5,6 +5,7 @@ import { Content } from './components/Content/Content';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = (props) => {
+
 	return (
 		<BrowserRouter>
 			<div className={style.app}>
