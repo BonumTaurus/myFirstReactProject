@@ -1,0 +1,13 @@
+.LoginForm {
+	background-color: #2aebcb;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	margin-top: -20px;
+}
+
+.LoginFormTitle {
+	margin-left: 50px;
+	padding-top: 30px;
+	color: #ff5e3a;
+}
