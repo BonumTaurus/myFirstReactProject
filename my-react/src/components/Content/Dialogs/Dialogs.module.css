@@ -15,30 +15,5 @@
 	margin-top: 20px;
 }
 
-.message__box {
-	display: flex;
-}
 
-.message__textarea {
-	width: 250px;
-	height: 70px;
-	border-radius: 20px;
-	background-color: #00b7ff;
-	border: none;
-	box-shadow: 0 0 5px #baddeb;
-	outline: none;
-	padding: 20px ;
-}
-
-.message__button {
-	margin-left: 20px;
-   border-radius: 20px;
-	width: 100px;
-	height: 50px;
-	border: none;
-	cursor: pointer;
-	box-shadow: 0 0 7px #00b7ff;
-	color: #00b7ff;
-	font-size: 16px;
-}
 

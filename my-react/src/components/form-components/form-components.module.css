@@ -1,0 +1,62 @@
+.textareaInput {
+	width: 250px;
+	height: 70px;
+	border-radius: 20px;
+	background-color: #00b7ff;
+	border: none;
+	box-shadow: 0 0 5px #baddeb;
+	outline: none;
+	padding: 20px ;
+}
+
+.errorTextarea {
+	box-shadow: 0 0 8px red;
+	width: 250px;
+	height: 70px;
+	border-radius: 20px;
+	background-color: #00b7ff;
+	border: none;
+	outline: none;
+	padding: 20px ;
+}
+
+.textareaBlock span {
+	display: inline-block;
+	padding-top: 10px;
+	background-color: #00b7ff;
+	color: #fff;
+	margin-left: 10px;
+	padding: 5px 10px;
+	border-radius: 20px;
+}
+
+.input {
+	height: 20px;
+	border: none;
+	border-radius: 20px;
+	padding-left: 10px;
+}
+
+.input:focus {
+	outline: none;
+	box-shadow: 0 0 3px #333;
+}
+
+.errorInput {
+	height: 20px;
+	border-radius: 20px;
+	padding-left: 10px;
+	box-shadow: 0 0 5px red;
+	border: 2px solid red;
+}
+
+.errorInput:focus {
+	outline: none;
+	box-shadow:inset 0 0 5px red;
+}
+
+.inputBlock span {
+	display: inline-block;
+	margin-left: 10px;
+	color: red;
+}

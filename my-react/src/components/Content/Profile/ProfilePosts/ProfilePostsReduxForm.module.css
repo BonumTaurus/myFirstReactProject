@@ -1,0 +1,31 @@
+.profile__setPost {
+	padding-left: 100px;
+	padding-bottom: 20px;
+
+	display: flex;
+
+	margin-bottom: 50px;
+}
+
+.profile__setPost textarea {
+	width: 400px;
+	height: 150px;
+	border-radius: 20px;
+	background-color: #00b7ff;
+	border: none;
+	box-shadow: 0 0 5px #baddeb;
+	outline: none;
+	padding: 20px ;
+}
+
+.profile__setPost button {
+	margin-left: 20px;
+   border-radius: 20px;
+	width: 120px;
+	height: 50px;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 0 7px #00b7ff;
+	color: #00b7ff;
+	font-size: 18px;
+}
