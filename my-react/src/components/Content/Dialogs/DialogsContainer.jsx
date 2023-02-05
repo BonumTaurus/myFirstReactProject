@@ -1,6 +1,6 @@
 import { Dialogs } from "./Dialogs";
 import { connect } from "react-redux";
-import { newTextMessageActionCreater, addMessageActionCreator } from "../../../redux/dialogs-reducer";
+import { addMessageActionCreator } from "../../../redux/dialogs-reducer";
 import { withAuthorization } from "../../HOC/withAuthorization";
 
 const DialogsWrapper = withAuthorization(Dialogs)
@@ -8,18 +8,14 @@ const DialogsWrapper = withAuthorization(Dialogs)
 const mapStateToProps = (state) => {
 	return {
 		dialogsFriends: state.dialogsPage.dialogsFriends,
-		dialogsMessages: state.dialogsPage.dialogsMessages,
-		newTextMessage: state.dialogsPage.newTextMessage
+		dialogsMessages: state.dialogsPage.dialogsMessages
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		changedMessage(textMessage) {
-			dispatch(newTextMessageActionCreater(textMessage))
-		},
-		addMessage() {
-			dispatch(addMessageActionCreator())
+		addMessage(messageText) {
+			dispatch(addMessageActionCreator(messageText))
 		}
 	}
 }

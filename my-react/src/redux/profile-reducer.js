@@ -1,6 +1,5 @@
 import { profileAPI } from "../API"
 
-const CHANGE_POST_TEXT = 'CHANGE-POST-TEXT'
 const ADD_POST = 'ADD-POST'
 const GET_STATUS = 'GET-STATUS'
 
@@ -12,22 +11,14 @@ const initialState = {
 		{ id: 2, name: 'name', text: 'Lorem ipsum dolor sit amet consectetur adipisicing.', likesCount: 10, ava: avatar },
 		{ id: 3, name: 'name', text: 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.', likesCount: 4, ava: avatar }
 	],
-	newPostText: '',
 	profileStatus: ''
 }
 
 const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case CHANGE_POST_TEXT: {
-			return {
-				...state, newPostText: action.postText
-			}
-		}
 		case ADD_POST: {
-			let newtext = state.newPostText
-			state.newPostText = ''
 			return {
-				...state, posts: [...state.posts, { id: 4, name: 'name', text: newtext, ava: avatar }]
+				...state, posts: [...state.posts, { id: 4, name: 'name', text: action.postText, ava: avatar }]
 			}
 		}
 		case GET_STATUS: {
@@ -40,8 +31,7 @@ const profileReducer = (state = initialState, action) => {
 	}
 }
 
-export const changePostText = (postText) => ({ type: CHANGE_POST_TEXT, postText })
-export const addPost = () => ({ type: ADD_POST })
+export const addPost = (postText) => ({ type: ADD_POST, postText })
 export const getProfileStatus = (status) => ({ type: GET_STATUS, status })
 
 export const requestStatus = (id) => (dispatch) => {
