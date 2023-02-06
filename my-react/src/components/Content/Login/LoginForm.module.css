@@ -40,3 +40,9 @@
 .formButton button:active {
 	box-shadow: inset 0 0 3px #333;
 }
+
+.formError {
+	color: red;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
