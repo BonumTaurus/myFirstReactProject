@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { UsersContainer } from './Users/UsersContainer';
 import { ProfileUserContainer } from './ProfileUser/ProfileUserContainer';
 import { ProfileContainer } from './Profile/ProfileContainer';
-import { Login } from '../Content/Login/Login'
+import Login from '../Content/Login/Login'
 
 const Content = (props) => {
 

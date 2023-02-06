@@ -1,6 +1,6 @@
 import { Header } from './Header'
 import { connect } from 'react-redux'
-import { requestAuthMe } from '../../redux/auth-reducer'
+import { requestAuthMe, deleteLogin } from '../../redux/auth-reducer'
 import { useEffect } from 'react'
 
 const HeaderWrapper = (props) => {
@@ -22,5 +22,5 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export const HeaderContainer = connect(mapStateToProps, { requestAuthMe })(HeaderWrapper)
+export const HeaderContainer = connect(mapStateToProps, { requestAuthMe, deleteLogin })(HeaderWrapper)
 

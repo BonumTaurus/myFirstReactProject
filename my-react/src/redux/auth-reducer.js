@@ -16,8 +16,7 @@ const authReducer = (state = initialState, action) => {
 		case (SET_AUTH_DATA): {
 			return {
 				...state,
-				...action.authData,
-				isAuth: true
+				...action.payload
 			}
 		}
 		case SET_MY_PROFILE: {
@@ -30,14 +29,14 @@ const authReducer = (state = initialState, action) => {
 	}
 }
 
-export const setAuthData = (id, email, login) => ({ type: SET_AUTH_DATA, authData: { id, email, login } })
+export const setAuthData = (id, email, login, isAuth) => ({ type: SET_AUTH_DATA, payload: { id, email, login, isAuth } })
 export const setMyProfile = (profile) => ({ type: SET_MY_PROFILE, profile })
 
 export const requestAuthMe = () => (dispatch) => {
 	authAPI.me().then(response => {
 		if (response.data.resultCode === 0) {
 			let { id, email, login } = response.data.data
-			dispatch(setAuthData(id, email, login))
+			dispatch(setAuthData(id, email, login, true))
 
 			profileAPI.getProfile(id).then(response => {
 				dispatch(setMyProfile(response.data))
@@ -45,4 +44,21 @@ export const requestAuthMe = () => (dispatch) => {
 		}
 	})
 }
+
+export const postLogin = (email, password, rememberMe) => (dispatch) => {
+	authAPI.login(email, password, rememberMe).then(response => {
+		if (response.data.resultCode === 0) {
+			dispatch(requestAuthMe())
+		}
+	})
+}
+
+export const deleteLogin = () => (dispatch) => {
+	authAPI.logout().then(response => {
+		if (response.data.resultCode === 0) {
+			dispatch(setAuthData(null, null, null, false))
+		}
+	})
+}
+
 export { authReducer }

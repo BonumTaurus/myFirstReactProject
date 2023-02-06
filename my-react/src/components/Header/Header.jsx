@@ -1,6 +1,5 @@
 import style from './Header.module.css'
 import logo_header from '../../images/rocket.webp'
-import myAva from '../../images/myAva.jpg'
 import { NavLink } from 'react-router-dom'
 
 const Header = (props) => {
@@ -10,7 +9,8 @@ const Header = (props) => {
 				<img src={logo_header}></img>
 			</div>
 			<div className={style.header__login}>
-				{props.isAuth ? <span>{props.login}</span> : <NavLink to={'/login'}><span>Login page</span></NavLink>}
+				{props.isAuth ? <div><button onClick={props.deleteLogin}>logout</button><span>{props.login}</span></div> :
+					<NavLink to={'/login'}><span>Login page</span></NavLink>}
 			</div>
 		</header>
 	)

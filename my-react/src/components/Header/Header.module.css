@@ -33,3 +33,13 @@
 	color: #f74881;
 	font-weight: 600;
 }
+
+.header__login button {
+	margin-right: 10px;
+	background-color: #f74881;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0 0 3px #9f1744;
+}
