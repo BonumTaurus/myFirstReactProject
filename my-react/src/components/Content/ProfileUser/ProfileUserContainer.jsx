@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios'
 import { Preloader } from "../../../Preloader/Preloader";
+import { withAuthorization } from '../../HOC/withAuthorization'
 
 const ProfileUserWrapper = (props) => {
 
@@ -25,6 +26,7 @@ const ProfileUserWrapper = (props) => {
 		<ProfileUser {...props} />
 	)
 }
+
 
 const mapStateToProps = (state) => {
 	return {

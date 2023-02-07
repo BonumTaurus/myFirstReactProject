@@ -17,8 +17,7 @@ const HeaderWrapper = (props) => {
 const mapStateToProps = (state) => {
 	return {
 		isAuth: state.auth.isAuth,
-		login: state.auth.login,
-		myProfile: state.auth.myProfile
+		login: state.auth.login
 	}
 }
 

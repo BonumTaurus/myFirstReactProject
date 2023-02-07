@@ -8,6 +8,8 @@ const mapStateToPropsForAuth = (state) => {
 	}
 }
 
+
+
 export const withAuthorization = (Component) => {
 	let withAuthorizationWrapper = (props) => {
 

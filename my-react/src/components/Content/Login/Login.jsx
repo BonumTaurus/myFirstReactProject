@@ -1,6 +1,6 @@
 import style from './Login.module.css'
 import { ReduxLoginForm } from './LoginForm'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postLogin } from '../../../redux/auth-reducer'
 

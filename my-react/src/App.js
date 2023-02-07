@@ -3,6 +3,7 @@ import { HeaderContainer } from './components/Header/HeaderContainer';
 import { SidebarContainer } from './components/Sidebar/SidebarContainer';
 import { Content } from './components/Content/Content';
 import { BrowserRouter } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const App = (props) => {
 
