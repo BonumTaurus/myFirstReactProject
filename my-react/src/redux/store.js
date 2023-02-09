@@ -7,6 +7,7 @@ import { sidebarReducer } from './sidebar-reducer'
 import { usersReducer } from './users-reducer'
 import { profileUserReducer } from './profileUser-reducer'
 import { authReducer } from './auth-reducer'
+import { appReducer } from './app-reducer'
 
 const reducers = combineReducers({
 	dialogsPage: dialogsReducer,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
 	usersPage: usersReducer,
 	profileUser: profileUserReducer,
 	auth: authReducer,
-	form: formReducer
+	form: formReducer,
+	app: appReducer
 })
 
 const store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))

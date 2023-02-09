@@ -34,7 +34,7 @@ export const setAuthData = (id, email, login, isAuth) => ({ type: SET_AUTH_DATA,
 export const setMyProfile = (profile) => ({ type: SET_MY_PROFILE, profile })
 
 export const requestAuthMe = () => (dispatch) => {
-	authAPI.me().then(response => {
+	return authAPI.me().then(response => {
 		if (response.data.resultCode === 0) {
 			let { id, email, login } = response.data.data
 			dispatch(setAuthData(id, email, login, true))
