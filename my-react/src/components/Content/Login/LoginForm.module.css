@@ -46,3 +46,7 @@
 	font-size: 20px;
 	margin-bottom: 20px;
 }
+
+.formCheckbox label {
+	cursor: pointer;
+}
