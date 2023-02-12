@@ -12,6 +12,7 @@ const Post = props => {
 				</div>
 				<div className={style.postText}>{props.text}</div>
 			</div>
+			<button onClick={() => props.deletePost(props.postId)}>delete post</button>
 		</div>
 	)
 }

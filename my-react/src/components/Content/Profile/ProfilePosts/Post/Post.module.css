@@ -2,9 +2,11 @@
 	margin-left: 100px;
 	margin-right: 100px;
 
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	background-color: aqua;
 	border-radius: 20px;
+
+	position: relative;
 }
 
 .profile__post {
@@ -48,4 +50,16 @@
 	margin: 10px;
 	color: #333;
 	font-size: 18px;
+}
+
+.profile__myPosts button {
+	position: absolute;
+	left: 700px;
+	cursor: pointer;
+	padding: 5px 15px;
+	border-radius: 20px;
+	border: none;
+	background-color: #f74881;
+	color: #fff;
+	box-shadow: 0 0 3px #fff;
 }

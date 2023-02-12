@@ -2,6 +2,7 @@ import { profileAPI } from "../API"
 
 const ADD_POST = 'ADD-POST'
 const GET_STATUS = 'GET-STATUS'
+const DELETE_POST = 'DELETE-POST'
 
 const avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xbitvBXWXb3Z86QjvGBcdvpBn5KFgrP8-g&usqp=CAU'
 
@@ -27,6 +28,11 @@ const profileReducer = (state = initialState, action) => {
 				...state, profileStatus: action.status
 			}
 		}
+		case DELETE_POST: {
+			return {
+				...state, posts: state.posts.filter(p => p.id !== action.postId)
+			}
+		}
 		default:
 			return state
 	}
@@ -34,6 +40,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPost = (postText) => ({ type: ADD_POST, postText })
 export const getProfileStatus = (status) => ({ type: GET_STATUS, status })
+export const deletePost = (postId) => ({ type: DELETE_POST, postId })
 
 export const requestStatus = (id) => (dispatch) => {
 	profileAPI.getStatus(id).then(response => {
