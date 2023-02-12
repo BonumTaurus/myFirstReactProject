@@ -16,6 +16,13 @@
 	display: flex;
 }
 
+.postInfo__number {
+	display: inline-block;
+	font-size: 18px;
+	color: #f74881;
+	margin: 10px 0 0 10px;
+}
+
 .postInfo img {
 	width: 70px;
 	height: 70px;
@@ -31,7 +38,7 @@
 }
 
 .postInfo__likes {
-	margin-left: 600px;
+	margin-left: 580px;
 	margin-top: 20px;
 	color: #f74881;
 	font-size: 18px;

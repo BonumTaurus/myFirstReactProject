@@ -7,9 +7,9 @@ const avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xbitvBXW
 
 const initialState = {
 	posts: [
-		{ id: 1, name: 'name', text: 'Lorem ipsum dolor sit amet.', likesCount: 13, ava: avatar },
-		{ id: 2, name: 'name', text: 'Lorem ipsum dolor sit amet consectetur adipisicing.', likesCount: 10, ava: avatar },
-		{ id: 3, name: 'name', text: 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.', likesCount: 4, ava: avatar }
+		{ id: 1, name: 'bonum', text: 'Lorem ipsum dolor sit amet.', likesCount: 13, ava: avatar },
+		{ id: 2, name: 'bonum', text: 'Lorem ipsum dolor sit amet consectetur adipisicing.', likesCount: 10, ava: avatar },
+		{ id: 3, name: 'bonum', text: 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.', likesCount: 4, ava: avatar }
 	],
 	profileStatus: ''
 }
@@ -17,8 +17,9 @@ const initialState = {
 const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_POST: {
+			let currentId = Number(state.posts.length + 1)
 			return {
-				...state, posts: [...state.posts, { id: 4, name: 'name', text: action.postText, ava: avatar }]
+				...state, posts: [...state.posts, { id: currentId, name: 'bonum', text: action.postText, likesCount: 0, ava: avatar }]
 			}
 		}
 		case GET_STATUS: {

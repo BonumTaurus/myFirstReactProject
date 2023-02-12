@@ -5,6 +5,7 @@ const Post = props => {
 		<div className={style.profile__myPosts}>
 			<div className={style.profile__post}>
 				<div className={style.postInfo}>
+					<span className={style.postInfo__number}>{props.number}.</span>
 					<img src={props.ava} />
 					<div className={style.postInfo__name}>{props.name}</div>
 					<div className={style.postInfo__likes}>Like {props.likes}</div>
