@@ -1,6 +1,6 @@
 import style from './Post.module.css'
 
-const Post = (props) => {
+const Post = props => {
 	return (
 		<div className={style.profile__myPosts}>
 			<div className={style.profile__post}>
@@ -15,4 +15,4 @@ const Post = (props) => {
 	)
 }
 
-export { Post };
+export default Post;

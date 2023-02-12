@@ -3,6 +3,7 @@ import myAva from '../../../../images/myAva.jpg'
 import { ProfileStatus } from './ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
+
 	return (
 		<div className={style.profile__header}>
 			<div className={style.profile__fon}>

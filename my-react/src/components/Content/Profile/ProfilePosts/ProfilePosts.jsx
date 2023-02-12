@@ -1,5 +1,5 @@
 import style from './ProfilePosts.module.css'
-import { Post } from './Post/Post';
+import Post from './Post/Post';
 import { ProfilePostsReduxForm } from './ProfilePostsReduxForm';
 import { reset } from 'redux-form';
 

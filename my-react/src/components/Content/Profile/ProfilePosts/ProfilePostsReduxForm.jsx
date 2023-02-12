@@ -1,6 +1,5 @@
 import style from './ProfilePostsReduxForm.module.css'
 import { reduxForm, Field } from 'redux-form'
-import { Textarea } from '../../../form-components/form-components'
 import { emptyField } from '../../../validators/validators'
 
 const ProfilePostsForm = (props) => {
