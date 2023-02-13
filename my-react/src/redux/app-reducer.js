@@ -1,6 +1,6 @@
 import { requestAuthMe } from "./auth-reducer"
 
-const INITIALIZE = 'INITIALIZE'
+const INITIALIZE = 'app/action/INITIALIZE'
 
 const initialState = {
 	initialized: false

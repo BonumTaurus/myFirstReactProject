@@ -1,5 +1,5 @@
-const CHANGE_TEXT_MESSAGE = 'CHANGE-TEXT-MESSAGE'
-const ADD_MESSAGE = 'ADD-MESSAGE'
+
+const ADD_MESSAGE = 'dialogs/action/ADD-MESSAGE'
 
 const initialState = {
 	dialogsFriends: [

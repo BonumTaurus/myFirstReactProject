@@ -1,0 +1,48 @@
+.usersPaginator {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.usersPage {
+	background-color: #00b7ff;
+	margin: 5px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #ffdc1b;
+	box-shadow: 0 0 3px #333;
+}
+
+.pageActive {
+	background-color: #00b7ff;
+	margin: 5px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #333;
+	box-shadow: 0 0 3px #333;
+}
+
+.usersLeftArrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-right: solid 25px #00b7ff;
+	border-top: solid 15px transparent;
+	border-bottom: solid 15px transparent;
+	cursor: pointer;
+}
+
+.usersRightArrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: solid 25px #00b7ff;
+	border-top: solid 15px transparent;
+	border-bottom: solid 15px transparent;
+	cursor: pointer;
+}

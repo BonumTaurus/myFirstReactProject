@@ -1,4 +1,4 @@
-const SET_PROFILE_USER = 'SET-PROFILE-USER'
+const SET_PROFILE_USER = 'profileUser/action/SET-PROFILE-USER'
 
 const initialState = {
 	profileUser: null

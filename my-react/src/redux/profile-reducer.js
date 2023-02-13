@@ -1,8 +1,8 @@
 import { profileAPI } from "../API"
 
-const ADD_POST = 'ADD-POST'
-const GET_STATUS = 'GET-STATUS'
-const DELETE_POST = 'DELETE-POST'
+const ADD_POST = 'profile/action/ADD-POST'
+const GET_STATUS = 'profile/action/GET-STATUS'
+const DELETE_POST = 'profile/action/DELETE-POST'
 
 const avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xbitvBXWXb3Z86QjvGBcdvpBn5KFgrP8-g&usqp=CAU'
 
@@ -42,18 +42,16 @@ export const addPost = (postText) => ({ type: ADD_POST, postText })
 export const getProfileStatus = (status) => ({ type: GET_STATUS, status })
 export const deletePost = (postId) => ({ type: DELETE_POST, postId })
 
-export const requestStatus = (id) => (dispatch) => {
-	profileAPI.getStatus(id).then(response => {
-		dispatch(getProfileStatus(response.data))
-	})
+export const requestStatus = (id) => async (dispatch) => {
+	let response = await profileAPI.getStatus(id)
+	dispatch(getProfileStatus(response.data))
 }
 
-export const requestUpdateStatus = (status) => (dispatch) => {
-	profileAPI.updateStatus(status).then(response => {
-		if (response.data.resultCode === 0) {
-			dispatch(getProfileStatus(status))
-		}
-	})
+export const requestUpdateStatus = (status) => async (dispatch) => {
+	let response = await profileAPI.updateStatus(status)
+	if (response.data.resultCode === 0) {
+		dispatch(getProfileStatus(status))
+	}
 }
 
 
