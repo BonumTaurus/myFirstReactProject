@@ -46,6 +46,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export const UsersContainer = connect(mapStateToProps,
+const UsersContainer = connect(mapStateToProps,
 	{ requestUsers, requestUsersOnPage, requestOnFollow, requestOnUnfollow })(UsersWrapper)
 
+export default UsersContainer

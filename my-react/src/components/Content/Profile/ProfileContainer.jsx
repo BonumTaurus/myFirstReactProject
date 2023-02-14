@@ -3,4 +3,4 @@ import { withAuthorization } from "../../HOC/withAuthorization";
 
 const ProfileContainer = withAuthorization(Profile)
 
-export { ProfileContainer } 
+export default ProfileContainer 
