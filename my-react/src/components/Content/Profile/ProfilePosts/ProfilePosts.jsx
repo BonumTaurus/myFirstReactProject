@@ -2,8 +2,6 @@ import style from './ProfilePosts.module.css'
 import Post from './Post/Post';
 import { ProfilePostsReduxForm } from './ProfilePostsReduxForm';
 import { reset } from 'redux-form';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { SelectSort } from './SelectSort/SelectSort';
 
 const ProfilePosts = (props) => {

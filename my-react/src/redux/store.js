@@ -1,4 +1,4 @@
-import { legacy_createStore, combineReducers, applyMiddleware } from 'redux'
+import { legacy_createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { reducer as formReducer } from 'redux-form'
 import { dialogsReducer } from './dialogs-reducer'
@@ -20,6 +20,9 @@ const reducers = combineReducers({
 	app: appReducer
 })
 
-const store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = legacy_createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)))
+
+// const store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))
 
 export { store }
