@@ -1,6 +1,7 @@
 import { ProfileInfo } from "./ProfileInfo";
 import { connect } from "react-redux";
 import { requestStatus, requestUpdateStatus } from "../../../../redux/profile-reducer";
+import { updatePhoto, updateProfile } from "../../../../redux/auth-reducer";
 import { useEffect } from "react";
 import { Preloader } from '../../../../Preloader/Preloader'
 
@@ -28,4 +29,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export const ProfileInfoContainer = connect(mapStateToProps, { requestStatus, requestUpdateStatus })(ProfileInfoWrapper)
+export const ProfileInfoContainer = connect(mapStateToProps, { requestStatus, requestUpdateStatus, updatePhoto, updateProfile })(ProfileInfoWrapper)

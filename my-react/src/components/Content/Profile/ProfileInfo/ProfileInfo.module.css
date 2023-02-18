@@ -1,7 +1,7 @@
 .profile__header {
 	position: relative;
 
-	margin-bottom: 150px;
+	margin-bottom: 70px;
 }
 
 .profile__fon {
@@ -34,4 +34,27 @@
 	position: absolute;
 	left: 300px;
 	bottom: -20px;
+}
+
+.profile__changeAva {
+	background-color: #f74881;
+	position: relative;
+	display: inline-block;
+	border-radius: 0 20px 20px 0;
+	padding: 0px 10px 0px 3px;
+	font-size: 14px;
+	box-shadow: 0 0 3px #fff;
+}
+
+.profile__changeAva input{
+	position: absolute;
+	visibility: hidden;
+}
+
+.profile__changeAva label{
+	cursor: pointer;
+}
+
+.profile__changeAva label span{
+	color: #fff;
 }

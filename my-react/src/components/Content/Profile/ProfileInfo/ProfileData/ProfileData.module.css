@@ -1,0 +1,46 @@
+.profileBody {
+	margin-bottom: 30px;
+}
+
+.profileBodyButton {
+	background-color: #f74881;
+	border: none;
+	color: #fff;
+	border-radius: 0 20px 20px 0;
+	box-shadow: 0 0 3px #fff;
+	cursor: pointer;
+}
+
+.profileBodyItem {
+	margin-left: 100px;
+	margin-bottom: 10px;
+}
+
+.profileBodyName {
+	color: #fff;
+}
+
+.profileBodyContent {
+	margin-left: 10px;
+}
+
+.profileBodyContacts {
+	margin-left: 100px;
+}
+
+.profileBodyContactsTitle, .profileBodyContactsName {
+	color: #ff5e3a;
+}
+
+.profileBodyContactsName {
+	box-shadow: 0 0 2px #333;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.profileBodyContactsLink {
+	box-shadow: 0 0 2px #333;
+	display: inline-block;
+	margin-left: 10px;
+	color: #333;
+}
