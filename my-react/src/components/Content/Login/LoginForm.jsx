@@ -16,6 +16,8 @@ const LoginForm = (props) => {
 				<label htmlFor='remember'>Remember me</label>
 				<Field id='remember' component={'input'} type={'checkbox'} name={'rememberMe'}></Field>
 			</div>
+			{props.captchaUrl && <img src={props.captchaUrl} />}
+			{props.captchaUrl && <Field component={Input} type={'text'} name={'captcha'} style={{ marginBottom: '10px' }} />}
 			{props.error && <div className={style.formError}>{props.error}</div>}
 			<div className={style.formButton}>
 				<button>submit</button>

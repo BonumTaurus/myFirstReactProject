@@ -8,7 +8,8 @@ import { postLogin } from '../../../redux/auth-reducer'
 const Login = (props) => {
 
 	const onSubmit = (formData) => {
-		props.postLogin(formData.email, formData.password, formData.rememberMe)
+		props.postLogin(formData.email, formData.password, formData.rememberMe, formData.captcha)
+		console.log(formData.email, formData.password, formData.rememberMe, formData.captcha)
 	}
 
 	if (props.isAuth) {
@@ -18,14 +19,15 @@ const Login = (props) => {
 	return (
 		<div className={style.LoginForm}>
 			<h1 className={style.LoginFormTitle}>Login page</h1>
-			<ReduxLoginForm onSubmit={onSubmit} />
+			<ReduxLoginForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
 		</div>
 	)
 }
 
 const mapStateToProps = (state) => {
 	return {
-		isAuth: state.auth.isAuth
+		isAuth: state.auth.isAuth,
+		captchaUrl: state.auth.captchaUrl
 	}
 }
 
